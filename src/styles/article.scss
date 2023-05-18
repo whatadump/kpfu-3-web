@@ -1,0 +1,17 @@
+article{
+    & p{
+        font-family: 'Open Sans';
+    }
+
+    & .person{
+
+        & .avatar{
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            object-position: 50% 50%;
+            border-radius: 50%;
+        }
+
+    }
+}

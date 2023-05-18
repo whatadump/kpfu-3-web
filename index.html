@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/src/styles/index.scss"/>
+    <meta property="og:title" content="GC Projekt"/>
+    <meta property="og:description" content="Веб сайт разработчика приложений"/>
+    <meta property="og:image" content="https://raw.githubusercontent.com/GC-Projekt/LowPixel/master/src/public/img/GC_Project.png?token=GHSAT0AAAAAAB6WDZ3MQFOVBSWHEYHEHBVQZDGL54A" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GC Project</title>
+  </head>
+  <body>
+    <header class="navbar flex px-4 py-7 flex-row justify-center">
+      <div class="w-full max-w-md flex flex-row items-center gap-5">
+        <div class="brand">
+          GC Projekt
+        </div>
+        <div class="navbar-opened hidden md:flex flex-row gap-3">
+            <a href="#">Главная</a>
+            <a href="#">Подразделения</a>
+            <a href="#">Сотрудники</a>
+        </div>
+        <div class="flex md:hidden flex-row gap-3">
+          <div class="menu">
+            <a id="menu-toggle" href="#">Меню</a>
+            <div id="menu-toggle-target" class="submenu flex-col gap-5 p-5">
+              <a href="#">Главная</a>
+              <a href="#">Подразделения</a>
+              <a href="#">Сотрудники</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full flex flex-col lg:flex-row gap-3 mt-10 px-5">
+      <nav class="px-5 w-full max-w-xs flex flex-col gap-5" style="max-height: 300px;">
+          <div class="px-5 flex flex-col">
+              <a href="#">Проекты</a>
+          </div>
+          <div class="px-5 flex flex-col">
+            <a href="#">Вакансии</a>
+          </div>
+          <div aria-hidden="true" class="flex flex-col server-status nice-block gap-4 px-5 py-5">
+              Состояние серверов:
+              <div id="status-text" class="p-3">
+                Запрос состояния...
+            </span>
+          </div>
+      </nav>
+      <section class="w-full nice-block flex flex-col gap-10 p-10">
+        <header>
+            <h1>Официальный сайт GC Projekt</h1>
+        </header>
+        <article aria-labelledby="main-name">
+            <h3>Кто мы?</h3>
+            <p id="main-name">Мы крупная транснациональная компания. Мы разрабатываем продукты для разных категорий пользователей, от игр до сайтов и приложений.</p>
+            <h3 class="mt-5">Наши подразделения</h3>
+            <div class="subcompanies flex flex-row gap-10 mt-3">
+              <img height="50" class="subcompany" src="DM.png"/>
+              <img height="50" class="subcompany" src="LowPixel.png"/>
+            </div>
+
+            <h3 class="mt-10">Наши ключевые сотрудники</h3>
+            <div class="flex flex-row flex-wrap justify-center items-center gap-20 mt-10">
+              <div class="person flex flex-col items-center gap-5">
+                <img src="rock.png" alt="" class="avatar">
+                <div aria-label="Сотрудник Dwaine Johnson" class="desc">Dwaine Johnson</div>
+              </div>
+              <div class="person flex flex-col items-center gap-5">
+                <img src="lake.jpg" alt="" class="avatar">
+                <div aria-label="Сотрудник Sami Jarvi" class="desc">Sami Jarvi</div>
+              </div>
+              <div class="person flex flex-col items-center gap-5">
+                <img src="musk.jpg" alt="" class="avatar">
+                <div aria-label="Сотрудник Yi Long Ma" class="desc">Yi Long Ma</div>
+              </div>
+            </div>
+            
+            <h3 class="mt-10 mb-5">Адрес главного офиса</h3>
+            <div aria-label="Адрес компании: офис Urban, Казань" style="position:relative;overflow:hidden;">
+              <a href="https://yandex.ru/maps/org/urban/76613192127/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:0px;">Urban</a>
+                <a href="https://yandex.ru/maps/43/kazan/category/business_center/184107509/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:14px;">Бизнес-центр в Казани</a>
+                <iframe
+                src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=49.132413%2C55.779548&mode=search&oid=76613192127&ol=biz&z=17.42"
+                width="100%" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+          </article>
+        <footer class="flex flex-row">
+            Тахир Латыпов, 17.05.2023 <a style="margin-left: auto" href="#">Сообщить о неточности</a>
+        </footer>
+      </section>
+      <aside class="py-5 px-8 w-full max-w-xs nice-block">
+        <h3 class="mb-5">Вакансии</h3>
+        <h5 class="mb-5" style="color: #eee">Отправьте свои данные для приглашения на собеседование</h5>
+        <form action="#" method="post" class="flex flex-col gap-5">
+          <div class="flex flex-col gap-3">
+            <label for="contact-name">Ваше имя</label>
+            <input id="contact-name" type="text" name="name" placeholder="Шаймиев М.Ш"/>
+          </div>
+          <div class="flex flex-col gap-3">
+            <label for="contact-phone">Ваш телефон</label>
+          <input id="contact-phone" type="text" name="phone" placeholder="Номер телефона"/>
+          </div>
+          <button type="button" class="very-beautiful">
+             Сохранить
+          </button>
+        </form>
+      </aside>
+    </main>
+    <footer class="w-full py-6 px-10 flex flex-row items-center gap-6 mt-20">
+        <span class="brand">
+          GC Projekt
+        </span>
+        <span class="copyright flex flex-row gap-2">
+            <span id="auto-year"></span>
+            <span>Все права защищены</span>
+        </span>
+    </footer>
+
+
+    <script type="module" src="/src/ts/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+$default-size-step: 4;
+$sizing-from: 0;
+$sizing-to: 20;
+
+$breakpoints: (
+    xxs: 160,
+    xs: 320,
+    sm: 640,
+    md: 768,
+    lg: 1024,
+    xl: 1280,
+    xxl: 1536,
+);
+
+$flex-positions: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+    evenly: space-evenly,
+);
+
+@mixin padding($prefix: null){
+    $prepend: if($prefix, '#{$prefix}\\:', '');
+    
+    @for $i from $sizing-from through $sizing-to{
+
+        $value: #{$i * $default-size-step}px;
+
+        .#{$prepend}p-#{$i}{
+            padding: $value;
+        }
+        .#{$prepend}pl-#{$i}{
+            padding-left: $value;
+        }
+        .#{$prepend}pr-#{$i}{
+            padding-right: $value;
+        }
+        .#{$prepend}pt-#{$i}{
+            padding-top: $value;
+        }
+        .#{$prepend}pb-#{$i}{
+            padding-bottom: $value;
+        }
+        .#{$prepend}py-#{$i}{
+            padding-top: $value;
+            padding-bottom: $value;
+        }
+        .#{$prepend}px-#{$i}{
+            padding-left: $value;
+            padding-right: $value;
+        }
+    }
+}
+
+@mixin margin($prefix: null){
+    $prepend: if($prefix, '#{$prefix}\\:', '');
+
+    @for $i from $sizing-from through $sizing-to{
+
+        $value: #{$i * $default-size-step}px;
+
+        .#{$prepend}m-#{$i}{
+            margin: $value;
+        }
+        .#{$prepend}ml-#{$i}{
+            margin-left: $value;
+        }
+        .#{$prepend}mr-#{$i}{
+            margin-right: $value;
+        }
+        .#{$prepend}mt-#{$i}{
+            margin-top: $value;
+        }
+        .#{$prepend}mb-#{$i}{
+            margin-bottom: $value;
+        }
+        .#{$prepend}mx-#{$i}{
+            margin-left: $value;
+            margin-right: $value;
+        }
+        .#{$prepend}my-#{$i}{
+            margin-top: $value;
+            margin-bottom: $value;
+        }
+
+    }
+}
+
+@mixin flex($prefix: null){
+    $prepend: if($prefix, '#{$prefix}\\:', '');
+
+    .#{$prepend}flex{
+        display: flex;
+    }
+
+    .#{$prepend}flex-col{
+        flex-direction: column;
+    }
+
+    .#{$prepend}flex-row{
+        flex-direction: row;
+    }
+
+    @each $name, $real in $flex-positions{
+        .#{$prepend}items-#{$name}{
+            align-items: $real;
+        }
+        .#{$prepend}justify-#{$name}{
+            justify-content: $real;
+        }
+    }
+    @for $i from $sizing-from through $sizing-to{
+        .#{$prepend}gap-#{$i}{
+            gap: #{$i * $default-size-step}px;
+        }
+    }
+}
+
+
+@include padding();
+
+@include margin();
+
+@include flex();
+
+.w-full{
+    width: 100%;
+}
+
+.hidden{
+    display: none;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+@each $name, $size in $breakpoints{
+
+    .#{$name}flex-wrap{
+        flex-wrap: wrap;
+    }
+
+    .max-w-#{$name} {
+        max-width: #{$size}px;
+    }
+    .min-w-#{$name} {
+        min-width: #{size}px;
+    }
+    .min-h-#{$name} {
+        min-height: #{$size}px;
+    }
+    .max-h-#{$name} {
+        max-height: #{$size}px;
+    }
+    @media screen and (min-width: #{$size}px) {
+
+        .#{$name}\:hidden{
+            display: none;
+        }
+        .#{$name}\:block{
+            display: block;
+        }
+        .#{$name}\:flex{
+            display: flex;
+        }
+        @include padding($name);
+        @include margin($name);
+        @include flex($name);
+    }
+}
+
+
+@for $i from 1 through 7{
+    h#{$i}{
+        margin: 0;
+    }
+}
+

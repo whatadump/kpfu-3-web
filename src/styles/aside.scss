@@ -1,0 +1,18 @@
+input{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button.very-beautiful{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background: #386fa4;
+    &:hover{
+        background: #133c55;
+    }
+    transition: .2s;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
