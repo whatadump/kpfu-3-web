@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async function(){
         }
     })
 
-    anchor?.addEventListener('click', function(e){
+    anchor?.addEventListener('click', function(){
         target?.classList.toggle('shown');
     });
 
@@ -23,15 +23,20 @@ document.addEventListener('DOMContentLoaded', async function(){
 
     setTimeout(function(){
         if (heartbeat.hasOwnProperty('status') && heartbeat.status == 'online'){
+            //@ts-ignore
             status_container.innerHTML = 'В сети';
+            //@ts-ignore
             status_container.style.backgroundColor = 'green';
         }else{
+            //@ts-ignore
             status_container.innerHTML = 'Не в сети';
+            //@ts-ignore
             status_container.style.backgroundColor = 'red';
         }
     }, 2000);
 
-    document.getElementById('auto-year').innerHTML = new Date().getFullYear();
+    //@ts-ignore
+    document.getElementById('auto-year').innerHTML = new Date().getFullYear().toString();
 
 });
 
